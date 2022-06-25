@@ -11,10 +11,10 @@ $(function() {
   // });
 
     // active nav
-    $('.navbar-nav .nav-item').on('click', function() {
-        $('.navbar-nav .nav-item.active').removeClass('active');
-        $(this).addClass('active');
-    });
+    // $('.navbar-nav .nav-item').on('click', function() {
+    //     $('.navbar-nav .nav-item.active').removeClass('active');
+    //     $(this).addClass('active');
+    // });
         
 
 
@@ -39,48 +39,49 @@ $(function() {
         }
     }
 })
-        
-    //preloader
-    setTimeout(function(){
-        $('.loader_bg').fadeToggle();
-    }, 1500);
-     // Popup Video
-	$('.popup-youtube').magnificPopup({
-		disableOn: 320,
-		type: 'iframe',
-		mainClass: 'mfp-fade',
-		removalDelay: 160,
-		preloader: false,
-		fixedContentPos: false
-    });
- // back to top
-    $(".back2").click(function() {
-        $('html, body').animate({
-        scrollTop: 0,
-        }, 1000);
-    });
-    $(window).on('scroll', function(){
-        var scrolling = $(this).scrollTop();
-        if(scrolling > 500){
-          $('.back2').addClass('aaa');
-          $('.aaa').fadeIn(500);
-        }
-        else if(scrolling > 200){
-          $('.aaa').fadeOut(500);
-        }
-        });
-        
-        $(".odometer").appear(function (e) {
-            var odo = $(".odometer");
-            odo.each(function () {
-                var countNumber = $(this).attr("data-count");
-                $(this).html(countNumber);
-            });
-        });
-        $('.test-popup-link').magnificPopup({
-          type: 'image'
-          // other options
-        });
+
+
+
+
+$('.testimonial-slider').slick({
+  infinite: false,
+  speed: 300,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows:true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
+
+
+
+    
 })(jQuery);	  
 
 // Row javascript
@@ -159,3 +160,6 @@ function myFunction4() {
       moreText.style.display = "inline";
     }
 }
+
+
+
