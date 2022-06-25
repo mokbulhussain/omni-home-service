@@ -1,13 +1,15 @@
 $(function() {
     'use strict';
-    $(window).on("scroll", function() {
-      if ($(document).scrollTop() > 20) {
-          $(".custom-nav").addClass("fixed-top");
-      }
-      else {
-          $(".custom-nav").removeClass("fixed-top");
-      }
-  });
+
+  //   $(window).on("scroll", function() {
+  //     if ($(document).scrollTop() > 20) {
+  //         $(".custom-nav").addClass("fixed-top");
+  //     }
+  //     else {
+  //         $(".custom-nav").removeClass("fixed-top");
+  //     }
+  // });
+
     // active nav
     $('.navbar-nav .nav-item').on('click', function() {
         $('.navbar-nav .nav-item.active').removeClass('active');
@@ -15,33 +17,28 @@ $(function() {
     });
         
 
-    //! CLIENT*
-    $('.client-carousel').owlCarousel({
-        autoplay: true,
-        autoplayTimeout: 2800,
-        loop: true,
-        margin: 20,
-        dots: true,
-        nav: false,
-        responsive: {
-            0: {
-                items: 1
-            },
-            768: {
-              items: 2
-          },
-            992: {
-              items: 3
-          },
 
-            1000: {
-                items: 3
-            },
-            1200: {
-                items: 3
-            }
+
+    
+  $('.project-slider').owlCarousel({
+    stagePadding: 200,
+    loop:true,
+    margin:32,
+    nav:false,
+    dots:true,
+    items:5,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:1
         }
-    })
+    }
+})
         
     //preloader
     setTimeout(function(){
